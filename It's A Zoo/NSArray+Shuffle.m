@@ -10,6 +10,10 @@
 
 @implementation NSArray (Shuffle)
 
+/*!
+ * @brief Shuffles an array
+ * @return An NSArray with shuffled version of specified array
+ */
 - (NSArray*) shuffle {
     NSMutableArray *tmpArray = [NSMutableArray arrayWithCapacity:[self count]];
     

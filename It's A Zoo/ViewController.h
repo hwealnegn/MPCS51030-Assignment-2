@@ -10,8 +10,12 @@
 
 @interface ViewController : UIViewController
 
+// Properties
 @property (nonatomic, strong) NSMutableArray *animals;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
+
+// Methods
+- (IBAction)buttonTapped:(id)sender;
 
 @end

@@ -36,7 +36,7 @@
     
     // Create new cat object
     Animal *cat = [[Animal alloc] init];
-    cat.name = @"Tigger";
+    cat.name = @"Cathy";
     cat.species = @"White Tiger";
     cat.age = @2;
     cat.image = [UIImage imageNamed:@"tiger.jpg"];
@@ -44,10 +44,10 @@
     [self.animals addObject:cat];
     NSLog(@"Cat Description:%@", [cat description]);
     
-    // Create new pig object
+    // Create new owl object
     Animal *owl = [[Animal alloc] init];
-    owl.name = @"Hoot";
-    owl.species = @"Owl";
+    owl.name = @"Olivia";
+    owl.species = @"Burrowing Owl";
     owl.age = @3;
     owl.image = [UIImage imageNamed:@"owl.jpg"];
     
@@ -59,7 +59,7 @@
     
     for (int i=0; i<3; i++) {
         // Create an image on each page
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(70+(i*320),150,200,200)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(60+(i*320),150,200,200)];
         imageView.image = [self.animals[i] image];
         [self.scrollView addSubview:imageView];
         
@@ -70,13 +70,30 @@
         [button setFrame:CGRectMake(110+(i*320),400,100,20)]; // not centered on screen when x=160?
         NSString *animalName = [self.animals[i] name];
         [button setTitle:[NSString stringWithFormat:@"%@",animalName]forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(buttonTapped:)forControlEvents:UIControlEventTouchUpInside];
         [self.scrollView addSubview:button];
+        
     }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+/*!
+ *@brief Receives touches from buttons
+ */
+-(IBAction)buttonTapped:(id)sender {
+    NSInteger tag = [sender tag];
+    NSString *name = [self.animals[tag] name];
+    NSNumber *age = [self.animals[tag] age];
+    //NSLog(@"Age: %@, Species: %@", age, species);
+    NSLog(@"%@", [self.animals[tag] description]);
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:name message:[NSString stringWithFormat:@"I'm %@ years old!",age] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+    
 }
 
 @end
