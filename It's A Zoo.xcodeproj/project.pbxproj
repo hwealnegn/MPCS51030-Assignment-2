@@ -14,6 +14,8 @@
 		3BFDFA5D1A69967C00AD40AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BFDFA5C1A69967C00AD40AE /* Images.xcassets */; };
 		3BFDFA601A69967C00AD40AE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFDFA5E1A69967C00AD40AE /* LaunchScreen.xib */; };
 		3BFDFA6C1A69967C00AD40AE /* It_s_A_ZooTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDFA6B1A69967C00AD40AE /* It_s_A_ZooTests.m */; };
+		3BFDFA771A69984800AD40AE /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDFA761A69984800AD40AE /* Animal.m */; };
+		3BFDFA7A1A699C2900AD40AE /* NSArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDFA791A699C2900AD40AE /* NSArray+Shuffle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		3BFDFA651A69967C00AD40AE /* It's A ZooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "It's A ZooTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BFDFA6A1A69967C00AD40AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BFDFA6B1A69967C00AD40AE /* It_s_A_ZooTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = It_s_A_ZooTests.m; sourceTree = "<group>"; };
+		3BFDFA751A69984800AD40AE /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		3BFDFA761A69984800AD40AE /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
+		3BFDFA781A699C2900AD40AE /* NSArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Shuffle.h"; sourceTree = "<group>"; };
+		3BFDFA791A699C2900AD40AE /* NSArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shuffle.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +91,11 @@
 				3BFDFA541A69967B00AD40AE /* AppDelegate.m */,
 				3BFDFA561A69967B00AD40AE /* ViewController.h */,
 				3BFDFA571A69967B00AD40AE /* ViewController.m */,
+				3BFDFA781A699C2900AD40AE /* NSArray+Shuffle.h */,
+				3BFDFA791A699C2900AD40AE /* NSArray+Shuffle.m */,
 				3BFDFA591A69967C00AD40AE /* Main.storyboard */,
+				3BFDFA751A69984800AD40AE /* Animal.h */,
+				3BFDFA761A69984800AD40AE /* Animal.m */,
 				3BFDFA5C1A69967C00AD40AE /* Images.xcassets */,
 				3BFDFA5E1A69967C00AD40AE /* LaunchScreen.xib */,
 				3BFDFA4F1A69967B00AD40AE /* Supporting Files */,
@@ -220,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BFDFA581A69967C00AD40AE /* ViewController.m in Sources */,
+				3BFDFA771A69984800AD40AE /* Animal.m in Sources */,
+				3BFDFA7A1A699C2900AD40AE /* NSArray+Shuffle.m in Sources */,
 				3BFDFA551A69967B00AD40AE /* AppDelegate.m in Sources */,
 				3BFDFA521A69967B00AD40AE /* main.m in Sources */,
 			);
@@ -348,6 +360,7 @@
 				INFOPLIST_FILE = "It's A Zoo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -358,6 +371,7 @@
 				INFOPLIST_FILE = "It's A Zoo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
