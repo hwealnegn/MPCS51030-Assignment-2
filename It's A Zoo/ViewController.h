@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIScrollViewDelegate>
 
 // Properties
 @property (nonatomic, strong) NSMutableArray *animals;
+@property (nonatomic, weak) NSArray *mixedArray;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
