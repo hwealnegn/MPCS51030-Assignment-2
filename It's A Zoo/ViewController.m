@@ -16,6 +16,8 @@
 
 @implementation ViewController
 
+@synthesize mixedArray = _mixedArray;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -27,7 +29,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    self.animals = [[NSMutableArray alloc] init];
+    self.animals = [[NSMutableArray alloc] init]; // original array
     
     // Create new dog object
     Animal *dog = [[Animal alloc] init];
@@ -59,22 +61,23 @@
     [self.animals addObject:owl];
     NSLog(@"Owl Description:%@", [owl description]);
     
-    self.mixedArray = [self.animals shuffle]; // shuffle array
+    _mixedArray = [self.animals shuffle]; // shuffle array
     
     for (int i=0; i<3; i++) {
         // Create an image on each page
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(60+(i*320),150,200,200)];
-        //imageView.image = [self.animals[i] image];
-        imageView.image = [self.mixedArray[i] image];
+        imageView.image = [_mixedArray[i] image];
         [self.scrollView addSubview:imageView];
         
         // Create a button on each page
         UIButton *button;
         button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [button setTag:i];
+        
+        NSInteger index = [_mixedArray indexOfObject:self.animals[i]];
+        [button setTag:index]; // set button tag so that it's associated with mixedArray index
+        
         [button setFrame:CGRectMake(110+(i*320),400,100,20)];
-        //NSString *animalName = [self.animals[i] name];
-        NSString *animalName = [self.mixedArray[i] name];
+        NSString *animalName = [_mixedArray[i] name];
         [button setTitle:[NSString stringWithFormat:@"%@",animalName]forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonTapped:)forControlEvents:UIControlEventTouchUpInside];
         [self.scrollView addSubview:button];
@@ -88,16 +91,17 @@
 }
 
 /*!
- *@brief Receives touches from buttons
+ *@brief Creates alert when button is tapped
  */
 -(IBAction)buttonTapped:(id)sender {
     NSInteger tag = [sender tag];
+    
     NSString *name = [self.animals[tag] name];
-    //NSString *name = [self.mixedArray[tag] name]; // doesn't work (does not show up?)
     NSString *species = [self.animals[tag] species];
     NSNumber *age = [self.animals[tag] age];
-    //NSLog(@"Age: %@, Species: %@", age, species);
-    NSLog(@"%@", [self.animals[tag] description]);
+    
+    NSLog(@"%@", [self.animals[tag] description]); // print description to log
+
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:name message:[NSString stringWithFormat:@"This %@ is %@ years old!", species, age] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
