@@ -12,7 +12,7 @@
 
 // Properties
 @property (nonatomic, strong) NSMutableArray *animals;
-@property (nonatomic, weak) NSArray *mixedArray;
+@property (nonatomic, strong) NSArray *mixedArray;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 

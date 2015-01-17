@@ -21,11 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    //self.animals = [[NSMutableArray alloc] init];
-    //[self.animals shuffle]; // shuffle array (not working??)
     [self.scrollView setContentSize:CGSizeMake(960, 500)];
-    
-    //NSLog(@"Shuffled animals: %@", [self.animals shuffle]);
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -83,6 +79,7 @@
         [self.scrollView addSubview:button];
     }
     
+    [self.label setText:[self.mixedArray[0] name]]; // initialize label
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,9 +106,18 @@
 }
 
 -(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    // Do stuff here (implement fading here?)
-    //[self.label setText:[self.animals[i] name]]; // incorrect
+    // Do stuff here: change label and implement fading
+    // Use frame geometry to determine which page you're on
+    CGFloat pageCount = 0;
+    NSInteger pageCountInt = 0;
+    NSInteger pageWidth = scrollView.frame.size.width;
+    CGFloat pageMove = scrollView.contentOffset.x/pageWidth;
     
+    if (pageMove != pageCount || pageCount == 0){
+        pageCount = scrollView.contentOffset.x/pageWidth;
+        pageCountInt = roundf(pageCount); // float to int
+        [self.label setText:[self.mixedArray[pageCountInt] name]]; // set label
+    }
 }
 
 @end
