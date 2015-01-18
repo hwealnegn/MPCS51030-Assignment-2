@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BA4C1B71A6C39D3005DAD24 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA4C1B61A6C39D3005DAD24 /* AVFoundation.framework */; };
 		3BFDFA521A69967B00AD40AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDFA511A69967B00AD40AE /* main.m */; };
 		3BFDFA551A69967B00AD40AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDFA541A69967B00AD40AE /* AppDelegate.m */; };
 		3BFDFA581A69967C00AD40AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDFA571A69967B00AD40AE /* ViewController.m */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BA4C1B61A6C39D3005DAD24 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3BFDFA4C1A69967B00AD40AE /* It's A Zoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "It's A Zoo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BFDFA501A69967B00AD40AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BFDFA511A69967B00AD40AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA4C1B71A6C39D3005DAD24 /* AVFoundation.framework in Frameworks */,
 				3BFE672C1A6C0CC000C7E193 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +81,7 @@
 		3BFDFA431A69967B00AD40AE = {
 			isa = PBXGroup;
 			children = (
+				3BA4C1B61A6C39D3005DAD24 /* AVFoundation.framework */,
 				3BFE672B1A6C0CC000C7E193 /* AudioToolbox.framework */,
 				3BFDFA4E1A69967B00AD40AE /* It's A Zoo */,
 				3BFDFA681A69967C00AD40AE /* It's A ZooTests */,

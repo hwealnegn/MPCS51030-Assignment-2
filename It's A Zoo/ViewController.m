@@ -108,13 +108,9 @@
     [alert show];
     
     // Add sound
-    SystemSoundID SoundID;
     NSString *soundFile = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", sound] ofType:@"wav"];
-    
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef) [NSURL fileURLWithPath:soundFile], &SoundID);
-    
-    AudioServicesPlaySystemSound(SoundID);
-    //NSLog(@"Sound played: %@", soundFile);
+    _soundEffect = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:soundFile] error:nil];
+    [_soundEffect play];
     
 }
 
@@ -135,7 +131,8 @@
 }
 */
 
--(void) scrollViewDidScroll:(UIScrollView *)scrollView { // used this instead of scrollViewDidEndDecelerating for proper fade effect
+// Used this instead of scrollViewDidEndDecelerating for proper fade effect
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat pageCount = 0;
     NSInteger pageCountInt = 0;
     NSInteger pageWidth = scrollView.frame.size.width;

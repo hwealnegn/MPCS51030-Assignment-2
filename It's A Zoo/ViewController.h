@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController : UIViewController <UIScrollViewDelegate>
+
+{
+    AVAudioPlayer *_soundEffect;
+}
 
 // Properties
 @property (nonatomic, strong) NSMutableArray *animals;
