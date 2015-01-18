@@ -129,11 +129,15 @@
     NSInteger pageWidth = scrollView.frame.size.width;
     CGFloat pageMove = scrollView.contentOffset.x/pageWidth;
     
-    CGFloat opacity = 1.0;
-    
     if (pageMove != pageCount || pageCount == 0){
         pageCount = roundf(scrollView.contentOffset.x/pageWidth); // update pageCount (0, 1, 2)
     }
+    
+    CGFloat opacity = (position-(pageCount*pageWidth))/(320*(1+pageCount));
+    
+    [self.label setAlpha:opacity];
+
+/*
 
     // Determine direction of swipe
     NSInteger previousPageInt = (int) self.previousPage;
@@ -176,6 +180,8 @@
     //}
     
     NSLog(@"%f, prev: %f", scrollView.contentOffset.x, self.previousPage);
+ 
+ */
 }
 
 @end
