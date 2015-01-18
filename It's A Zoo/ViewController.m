@@ -114,7 +114,7 @@
     AudioServicesCreateSystemSoundID((__bridge CFURLRef) [NSURL fileURLWithPath:soundFile], &SoundID);
     
     AudioServicesPlaySystemSound(SoundID);
-    NSLog(@"Sound played: %@", soundFile);
+    //NSLog(@"Sound played: %@", soundFile);
     
 }
 
