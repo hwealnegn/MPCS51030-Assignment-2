@@ -22,6 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self.scrollView setContentSize:CGSizeMake(960, 500)];
+    self.previousPage = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -118,6 +119,63 @@
         pageCountInt = roundf(pageCount); // float to int
         [self.label setText:[self.mixedArray[pageCountInt] name]]; // set label
     }
+    
+    self.previousPage = scrollView.contentOffset.x; // 'save' page on which it was last
+}
+
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat position = scrollView.contentOffset.x;
+    CGFloat pageCount = 0;
+    NSInteger pageWidth = scrollView.frame.size.width;
+    CGFloat pageMove = scrollView.contentOffset.x/pageWidth;
+    
+    CGFloat opacity = 1.0;
+    
+    if (pageMove != pageCount || pageCount == 0){
+        pageCount = roundf(scrollView.contentOffset.x/pageWidth); // update pageCount (0, 1, 2)
+    }
+
+    // Determine direction of swipe
+    NSInteger previousPageInt = (int) self.previousPage;
+    
+    if (scrollView.contentOffset.x > self.previousPage) { // left to right
+//        if (previousPageInt % pageWidth) { // fade out
+            //CGFloat fadeOut = (pageWidth-(position-(pageCount*pageWidth)))/pageWidth;
+//            CGFloat fadeIn = (position-(pageCount*pageWidth))/pageWidth;
+//            opacity = fadeIn;
+//            [self.label setAlpha:opacity];
+//        }
+//        else { // fade in
+            //CGFloat fadeIn = (position-(pageCount*pageWidth))/pageWidth;
+            CGFloat fadeOut = (pageWidth-(position-(pageCount*pageWidth)))/pageWidth;
+            opacity = fadeOut;
+            [self.label setAlpha:opacity];
+//        }
+
+    }
+    else { // right to left
+        if (previousPageInt % pageWidth) { // fade out
+            //CGFloat fadeOut = (pageWidth-(position-(pageCount*pageWidth)))/pageWidth;
+            CGFloat fadeIn = (position-(pageCount*pageWidth))/pageWidth;
+            opacity = fadeIn;
+            [self.label setAlpha:opacity];
+        }
+        else { // fade in
+            //CGFloat fadeIn = (position-(pageCount*pageWidth))/pageWidth;
+            CGFloat fadeOut = (pageWidth-(position-(pageCount*pageWidth)))/pageWidth;
+            opacity = fadeOut;
+            [self.label setAlpha:opacity];
+        }
+    }
+    
+    //if (position > ((pageCount+1)*(pageWidth/2))){
+    //    CGFloat fadeOut = (pageWidth-(position-(pageCount*pageWidth)))/pageWidth;
+    //    CGFloat fadeIn = (position-(pageCount*pageWidth))/pageWidth;
+        
+    //    [self.label setAlpha:opacity];
+    //}
+    
+    NSLog(@"%f, prev: %f", scrollView.contentOffset.x, self.previousPage);
 }
 
 @end
