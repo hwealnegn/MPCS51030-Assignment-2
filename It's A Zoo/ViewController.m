@@ -33,6 +33,7 @@
     dog.species = @"Yorkshire Terrier";
     dog.age = @1;
     dog.image = [UIImage imageNamed:@"puppy.jpg"];
+    dog.sound = @"dog";
     
     [self.animals addObject:dog];
     NSLog(@"Dog Description:%@", [dog description]);
@@ -43,6 +44,7 @@
     cat.species = @"White Tiger";
     cat.age = @2;
     cat.image = [UIImage imageNamed:@"tiger.jpg"];
+    cat.sound = @"cat";
     
     [self.animals addObject:cat];
     NSLog(@"Cat Description:%@", [cat description]);
@@ -53,6 +55,7 @@
     owl.species = @"Burrowing Owl";
     owl.age = @3;
     owl.image = [UIImage imageNamed:@"owl.jpg"];
+    owl.sound = @"owl";
     
     [self.animals addObject:owl];
     NSLog(@"Owl Description:%@", [owl description]);
@@ -96,6 +99,7 @@
     NSString *name = [self.animals[tag] name];
     NSString *species = [self.animals[tag] species];
     NSNumber *age = [self.animals[tag] age];
+    NSString *sound = [self.animals[tag] sound];
     
     NSLog(@"%@", [self.animals[tag] description]); // print description to log
 
@@ -103,7 +107,17 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:name message:[NSString stringWithFormat:@"This %@ is %@ years old!", species, age] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
     
+    // Add sound
+    SystemSoundID SoundID;
+    NSString *soundFile = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", sound] ofType:@"wav"];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef) [NSURL fileURLWithPath:soundFile], &SoundID);
+    
+    AudioServicesPlaySystemSound(SoundID);
+    NSLog(@"Sound played: %@", soundFile);
+    
 }
+
 /*
 -(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     // Do stuff here: change label and implement fading
@@ -120,7 +134,8 @@
     }
 }
 */
--(void) scrollViewDidScroll:(UIScrollView *)scrollView {
+
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView { // used this instead of scrollViewDidEndDecelerating for proper fade effect
     CGFloat pageCount = 0;
     NSInteger pageCountInt = 0;
     NSInteger pageWidth = scrollView.frame.size.width;

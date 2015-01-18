@@ -16,6 +16,10 @@
 		3BFDFA6C1A69967C00AD40AE /* It_s_A_ZooTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDFA6B1A69967C00AD40AE /* It_s_A_ZooTests.m */; };
 		3BFDFA771A69984800AD40AE /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDFA761A69984800AD40AE /* Animal.m */; };
 		3BFDFA7A1A699C2900AD40AE /* NSArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDFA791A699C2900AD40AE /* NSArray+Shuffle.m */; };
+		3BFE672C1A6C0CC000C7E193 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFE672B1A6C0CC000C7E193 /* AudioToolbox.framework */; };
+		3BFE67361A6C148E00C7E193 /* cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BFE67331A6C148E00C7E193 /* cat.wav */; };
+		3BFE67381A6C148E00C7E193 /* owl.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BFE67351A6C148E00C7E193 /* owl.wav */; };
+		3BFE673A1A6C151000C7E193 /* dog.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3BFE67391A6C151000C7E193 /* dog.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		3BFDFA761A69984800AD40AE /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
 		3BFDFA781A699C2900AD40AE /* NSArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Shuffle.h"; sourceTree = "<group>"; };
 		3BFDFA791A699C2900AD40AE /* NSArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Shuffle.m"; sourceTree = "<group>"; };
+		3BFE672B1A6C0CC000C7E193 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3BFE67331A6C148E00C7E193 /* cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = cat.wav; path = ../cat.wav; sourceTree = "<group>"; };
+		3BFE67351A6C148E00C7E193 /* owl.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = owl.wav; path = ../owl.wav; sourceTree = "<group>"; };
+		3BFE67391A6C151000C7E193 /* dog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dog.wav; path = ../dog.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BFE672C1A6C0CC000C7E193 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +78,7 @@
 		3BFDFA431A69967B00AD40AE = {
 			isa = PBXGroup;
 			children = (
+				3BFE672B1A6C0CC000C7E193 /* AudioToolbox.framework */,
 				3BFDFA4E1A69967B00AD40AE /* It's A Zoo */,
 				3BFDFA681A69967C00AD40AE /* It's A ZooTests */,
 				3BFDFA4D1A69967B00AD40AE /* Products */,
@@ -87,6 +97,9 @@
 		3BFDFA4E1A69967B00AD40AE /* It's A Zoo */ = {
 			isa = PBXGroup;
 			children = (
+				3BFE67331A6C148E00C7E193 /* cat.wav */,
+				3BFE67391A6C151000C7E193 /* dog.wav */,
+				3BFE67351A6C148E00C7E193 /* owl.wav */,
 				3BFDFA531A69967B00AD40AE /* AppDelegate.h */,
 				3BFDFA541A69967B00AD40AE /* AppDelegate.m */,
 				3BFDFA561A69967B00AD40AE /* ViewController.h */,
@@ -212,6 +225,9 @@
 				3BFDFA5B1A69967C00AD40AE /* Main.storyboard in Resources */,
 				3BFDFA601A69967C00AD40AE /* LaunchScreen.xib in Resources */,
 				3BFDFA5D1A69967C00AD40AE /* Images.xcassets in Resources */,
+				3BFE673A1A6C151000C7E193 /* dog.wav in Resources */,
+				3BFE67381A6C148E00C7E193 /* owl.wav in Resources */,
+				3BFE67361A6C148E00C7E193 /* cat.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +444,7 @@
 				3BFDFA711A69967C00AD40AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BFDFA721A69967C00AD40AE /* Build configuration list for PBXNativeTarget "It's A ZooTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +453,7 @@
 				3BFDFA741A69967C00AD40AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
