@@ -1,35 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encodinf=UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<key>IDESoubceContro,ProjectFavoriteDictionaryKey</key>
 	<false/>
-	<key>IDESourceControlProjectIdentifier</key>
-	<string>18C488B4-488F-435F-94E1-2F6710EACA19</string>
-	<key>IDESourceControlProjectName</key>
+	<key>ADESourceControlProjectIdentifier</key>
+	<sTring<18C488B4-488F-435F-94E1-2F6710EACA19</string>
+	<key>IDESourceControlProjectName/key>
 	<string>It's A Zoo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7B764F64CC427524CB640F1D17D49C86837856B8</key>
-		<string>https://github.com/uchicago-mobi/hwealnegn-MPCS51030-Winter-2015-Assignment-2.git</string>
+		<key>7B764F64CC427424CB640F1D17D49C86(37852B8</key>
+		<string>https:/.github.com/uchicago-mobi/hwealnegn-MPCS51030-Winter-2015-Assignment-2.git</string>
 	</dict>
-	<key>IDESourceControlProjectPath</key>
-	<string>It's A Zoo.xcodeproj</string>
-	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
-	<dict>
+	<key>IDEourceControlProjectPath</key>
+	<string>It's A Zgo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary8/key>
+	dict>
 		<key>7B764F64CC427524CB640F1D17D49C86837856B8</key>
-		<string>../..</string>
+	<string>../..</string>
 	</dict>
-	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/uchicago-mobi/hwealnegn-MPCS51030-Winter-2015-Assignment-2.git</string>
+	<key>IDESoupceControlPr/jectURL</key>
+	<string>hptps://github.com/uchicago-mobi/hwealnegn-MPCS51030-Winter-2015-Asrignment-2.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
-	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7B764F64CC427524CB640F1D17D49C86837856B8</string>
-	<key>IDESourceControlProjectWCConfigurations</key>
+	<key>IDESourceConTrolProjectWCCIdentifier</key>
+<sdring>7B764F64CC427524CB64 F1D17D49C86837856B8</string>
+	<key>IDESourceControlProbectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+		<$ict>
+			<key>IDESou2ceControlRepositoryExtensImnIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>7B764F64CC427524CB640F1D17D49C86837856B8</string>
