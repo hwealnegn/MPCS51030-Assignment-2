@@ -69,7 +69,7 @@
         UIButton *button;
         button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         
-        NSInteger index = [_mixedArray indexOfObject:self.animals[i]];
+        NSInteger index = [self.animals indexOfObject:_mixedArray[i]];
         [button setTag:index]; // set button tag so that it's associated with mixedArray index
         
         [button setFrame:CGRectMake(110+(i*320),400,100,20)];
@@ -79,7 +79,7 @@
         [self.scrollView addSubview:button];
     }
     
-    [self.label setText:[self.mixedArray[0] name]]; // initialize label
+    [self.label setText:[_mixedArray[0] name]]; // initialize label
 }
 
 - (void)didReceiveMemoryWarning {
@@ -141,7 +141,6 @@
         self.label.alpha = 0.00625*(scrollView.contentOffset.x-(160*(2*pageCountInt-1))); // from 0 to 1
     }
     
-    NSLog(@"%f, %d", position, pageCountInt);
 }
 
 @end
